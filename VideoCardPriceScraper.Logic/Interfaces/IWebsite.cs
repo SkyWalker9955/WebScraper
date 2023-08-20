@@ -1,4 +1,4 @@
-﻿namespace WebScraper.Logic;
+﻿namespace WebScraper.Logic.Interfaces;
 
 public interface IWebsite
 {

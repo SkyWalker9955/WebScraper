@@ -1,9 +1,8 @@
-﻿namespace WebScraper.Logic;
+﻿namespace WebScraper.Logic.Interfaces;
 
 public interface IScraper
 {
     IWebsite Website { get; }
-    string CategoryToScrape { get; }
 
     public List<IProduct> Scrape(string category);
 }

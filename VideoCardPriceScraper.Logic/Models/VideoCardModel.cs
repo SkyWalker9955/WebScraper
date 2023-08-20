@@ -1,4 +1,6 @@
-﻿namespace WebScraper.Logic.Models;
+﻿using WebScraper.Logic.Interfaces;
+
+namespace WebScraper.Logic.Models;
 
 internal class VideoCardModel : IProduct
 {
@@ -16,6 +18,6 @@ internal class VideoCardModel : IProduct
         {
             return _type;
         }
-        set => _type = value;
+        set => _type = "VideoCard";
     }
 }

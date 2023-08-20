@@ -1,13 +1,14 @@
 ﻿using WebScraper.Logic.Enums;
 using static System.Console;
 
-namespace WebScraper.Logic;
+namespace WebScraper.Logic.Util;
 
 public class Prompter
 {
-    public (string, string) Prompt() {
+    public Tuple<string, string> Prompt()
+    {
 
-        WriteLine("Welcome to Video-Card Scraping Software!!!");
+        WriteLine("Welcome to PC-components Scraping Software!!!");
         WriteLine("");
         WriteLine("Select a site to scrape:");
         int correspondintNumber = 1;
@@ -16,7 +17,7 @@ public class Prompter
             WriteLine($"{item} - {correspondintNumber}");
             correspondintNumber++;
         }
-        var siteInput = Enum.Parse(typeof(Sources), ReadLine()!);
+        string siteInput = Enum.GetName(typeof(Sources), Convert.ToInt32(ReadLine()))!; 
         WriteLine($"Selected source is {siteInput}");
         WriteLine("");
         WriteLine($"Select a category to scrape for:");
@@ -26,10 +27,11 @@ public class Prompter
             WriteLine($"{item} - {correspondintNumber}");
             correspondintNumber++;
         }
-        var categoryInput = Enum.Parse(typeof(Categories), ReadLine()!);
+        string categoryInput = Enum.GetName(typeof(Categories), Convert.ToInt32(ReadLine()))!;
         WriteLine($"Selected category is {categoryInput}");
         WriteLine("");
 
-        return ((string)siteInput, (string)categoryInput);
+        var result = Tuple.Create(siteInput, categoryInput);
+        return result;
     }
 }
