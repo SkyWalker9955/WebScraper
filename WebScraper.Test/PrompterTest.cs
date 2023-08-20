@@ -1,4 +1,4 @@
-using WebScraper.Logic;
+using WebScraper.Logic.Util;
 using Xunit;
 
 namespace WebScraper.Test

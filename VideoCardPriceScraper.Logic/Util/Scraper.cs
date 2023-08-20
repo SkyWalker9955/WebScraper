@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using WebScraper.Logic.Interfaces;
 
 namespace WebScraper.Logic.Util;
 
 public class Scraper : IScraper
 {
-    public IWebsite Website => throw new NotImplementedException();
 
-    public string CategoryToScrape => throw new NotImplementedException();
+    public Scraper(IWebsite website)
+    {
+        Website = website;
+    }
+
+    public IWebsite Website { get; set; }
 
     public List<IProduct> Scrape(string category)
     {
