@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VideoCardPriceScraper.Logic\VideoCardPriceScraper.Logic.csproj" />
+    <ProjectReference Include="..\VideoCardPriceScraper.Logic\WebScraper.Logic.csproj" />
   </ItemGroup>
 
 </Project>

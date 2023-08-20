@@ -1,4 +1,4 @@
-﻿namespace VideoCardPriceScraper.Logic.Enums;
+﻿namespace WebScraper.Logic.Enums;
 
 public enum Categories
 {

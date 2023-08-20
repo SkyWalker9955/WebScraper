@@ -1,4 +1,4 @@
-﻿namespace VideoCardPriceScraper.Logic.Models;
+﻿namespace WebScraper.Logic.Models;
 
 internal class VideoCardModel : IProduct
 {

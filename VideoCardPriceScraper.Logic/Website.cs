@@ -1,4 +1,4 @@
-﻿namespace VideoCardPriceScraper.Logic;
+﻿namespace WebScraper.Logic;
 
 public class Website : IWebsite
 {
