@@ -1,24 +1,49 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import WebsiteCheckboxes from './components/website-checkboxes';
+import ProductCheckboxes from './components/product-checkboxes';
+import ScrapeButton from './components/scrape-button';
 
-function App() {
+const App = () => {
+  const [selectedWebsite, setSelectedWebsite] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState([]);
+
+  const handleProductSelection = (selectedProduct) => {
+    setSelectedProduct(selectedProduct);
+  };
+
+  const handleWebsiteSelection = (selectedWebsite) => {
+    setSelectedWebsite(selectedWebsite);
+  };
+
+
+  const handleScrape = () => {
+    
+      console.log('Selected Website:', selectedWebsite);
+      console.log('Selected Product:', selectedProduct);
+    
+  };
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Web Scraper 1.0</h1>
+      <div className='inputs'>
+        
+
+        <p>1. Which website would you like to scrape through?</p>
+        <WebsiteCheckboxes setSelectedWebsite={handleWebsiteSelection}/>
+
+        <p>2. Which product would you like to scrape for?</p>
+        <ProductCheckboxes setSelectedProduct={handleProductSelection}/>
+      </div>
+      <br />
+      <ScrapeButton onClick={handleScrape} />
+      <hr className='dotted-line'/>
+      <h1>Results</h1>
+
     </div>
+
   );
 }
 
