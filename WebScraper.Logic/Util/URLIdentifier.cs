@@ -40,5 +40,8 @@ public class URLIdentifier
         return baseUrl;
     }
 
+    //This component must figure out what is the structure of a main page that is being scraped to find out category to get the link out of it.
+    //Meanwhile strings are hardcoded.
     private string IdentifyCategoryUrl(string category) => new NotImplementedException().Message;
+
 }

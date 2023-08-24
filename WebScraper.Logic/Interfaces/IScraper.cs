@@ -4,5 +4,5 @@ public interface IScraper
 {
     IWebsite Website { get; }
 
-    public List<IProduct> Scrape(string category);
+    public List<IProduct> Scrape();
 }
