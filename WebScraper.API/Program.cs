@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using WebScraper.Logic.Interfaces;
 using WebScraper.Logic.Util;
 
+//NEW BRANCH
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
