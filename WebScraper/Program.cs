@@ -13,4 +13,4 @@ Website website = new(userInput.Item1, urlIdentifier._baseUrl, "https://www.newe
 
 Scraper scraper = new(website);
 
-scraper.Scrape(website.CategoryUrl);
+//scraper.Scrape(website.CategoryUrl);
