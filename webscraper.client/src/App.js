@@ -3,6 +3,7 @@ import './App.css';
 import WebsiteCheckboxes from './components/website-checkboxes';
 import ProductCheckboxes from './components/product-checkboxes';
 import ScrapeButton from './components/scrape-button';
+import axios from 'axios';
 
 const App = () => {
   const [selectedWebsite, setSelectedWebsite] = useState([]);
@@ -21,6 +22,13 @@ const App = () => {
     
       console.log('Selected Website:', selectedWebsite);
       console.log('Selected Product:', selectedProduct);
+
+      axios.get()
+      .then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
     
   };
 
