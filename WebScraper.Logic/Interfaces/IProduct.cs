@@ -4,5 +4,5 @@ public interface IProduct
 {
     string Name { get; }
     string Description { get; }
-    string Type { get; }
+    string Price { get; }
 }
