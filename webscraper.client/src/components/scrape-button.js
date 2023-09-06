@@ -1,8 +1,11 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 const ScrapeButton = ({onClick}) => {
   return (
-    <button onClick={onClick} >Scrape Data</button>
+    <Button variant="primary" size="lg" onClick={onClick}>
+      Scrape 
+    </Button>
   );
 }
 

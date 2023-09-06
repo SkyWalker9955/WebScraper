@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef  } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../App.css';
+import Form from 'react-bootstrap/Form';
 
 const ProductCheckboxes = ({ setSelectedProduct }) => {
   const [checkedValues, setCheckedValues] = useState([]);
@@ -7,12 +8,12 @@ const ProductCheckboxes = ({ setSelectedProduct }) => {
 
   useEffect(() => {
     if (prevCheckedValuesRef.current !== checkedValues) {
-        setSelectedProduct(checkedValues);
-        console.log(checkedValues);
-      }
-      // Store the current checkedValues for the next comparison
-      prevCheckedValuesRef.current = checkedValues;
-    }, [checkedValues, setSelectedProduct]);
+      setSelectedProduct(checkedValues);
+      console.log(checkedValues);
+    }
+    // Store the current checkedValues for the next comparison
+    prevCheckedValuesRef.current = checkedValues;
+  }, [checkedValues, setSelectedProduct]);
 
   const handleCheckboxChange = (value) => {
     if (checkedValues.includes(value)) {
@@ -26,57 +27,57 @@ const ProductCheckboxes = ({ setSelectedProduct }) => {
     return checkedValues.length > 0 && !checkedValues.includes(value);
   };
 
- 
+
 
   return (
-    
-      <div className='inputs2'>
-        <div>
-          <input
-            type="checkbox"
-            value='1'
-            disabled={isCheckboxDisabled('1')}
-            onChange={() => handleCheckboxChange('1')}
-          />
-          GPU
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            value='2'
-            disabled={isCheckboxDisabled('2')}
-            onChange={() => handleCheckboxChange('2')}
-          />
-          RAM
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            value='3'
-            disabled={isCheckboxDisabled('3')}
-            onChange={() => handleCheckboxChange('3')}
-          />
-          MCB
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            value='4'
-            disabled={isCheckboxDisabled('4')}
-            onChange={() => handleCheckboxChange('4')}
-          />
-          PWS
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            value='5'
-            disabled={isCheckboxDisabled('5')}
-            onChange={() => handleCheckboxChange('5')}
-          />
-          SSD
-        </div>
-      </div>
+
+    <Form>
+      <Form.Check
+        type="checkbox"
+        id="checkbox1"
+        label="GPU"
+        value="1"
+        disabled={isCheckboxDisabled('1')}
+        checked={checkedValues.includes('1')}
+        onChange={() => handleCheckboxChange('1')}
+      />
+      <Form.Check
+        type="checkbox"
+        id="checkbox2"
+        label="RAM"
+        value="2"
+        disabled={isCheckboxDisabled('2')}
+        checked={checkedValues.includes('2')}
+        onChange={() => handleCheckboxChange('2')}
+      />
+      <Form.Check
+        type="checkbox"
+        id="checkbox3"
+        label="MCB"
+        value="3"
+        disabled={isCheckboxDisabled('3')}
+        checked={checkedValues.includes('3')}
+        onChange={() => handleCheckboxChange('3')}
+      />
+      <Form.Check
+        type="checkbox"
+        id="checkbox4"
+        label="PWS"
+        value="4"
+        disabled={isCheckboxDisabled('4')}
+        checked={checkedValues.includes('4')}
+        onChange={() => handleCheckboxChange('4')}
+      />
+      <Form.Check
+        type="checkbox"
+        id="checkbox5"
+        label="SSD"
+        value="5"
+        disabled={isCheckboxDisabled('5')}
+        checked={checkedValues.includes('5')}
+        onChange={() => handleCheckboxChange('5')}
+      />
+    </Form>
 
   );
 }
